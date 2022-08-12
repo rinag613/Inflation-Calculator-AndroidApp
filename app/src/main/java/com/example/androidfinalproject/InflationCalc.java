@@ -3,11 +3,15 @@ package com.example.androidfinalproject;
 public class InflationCalc {
     private double rate;
     private double money;
+    private double moneyLost;
+    private double total;
 
-    public InflationCalc(){
-        this.rate = 0;
-        this.money=0;
+
+    public InflationCalc(double mn, double rt) {
+        this.money=mn;
+        this.rate = rt;
     }
+
     public void setRate(double rt){
         rate = checkAndGetGreaterThanZero(rt, "Rate")/100;
     }
@@ -20,12 +24,6 @@ public class InflationCalc {
     public double getMoney(){
         return money;
     }
-    public InflationCalc(double rt, double mn){
-        rate =checkAndGetGreaterThanZero(rt, "Rate")/100;
-
-        money = checkAndGetGreaterThanZero(mn, "Money");
-    }
-
     private double checkAndGetGreaterThanZero (double value, String description)
     {
         if (value >0)
@@ -36,7 +34,8 @@ public class InflationCalc {
 
     public double calculate(){
         double mn=getMoney();
-        double total = (getMoney()*getRate())+mn;
+        total = (getMoney()*getRate())+mn;
+        moneyLost=total-money;
         return total;
     }
 }

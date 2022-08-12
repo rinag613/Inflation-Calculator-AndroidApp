@@ -1,9 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inflation Calculation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/spending_amount_txt"
+        />
+
+
+    <TextView
+        android:backgroundTint="#FCB9B9"
+        android:layout_marginTop="25dp"
+        android:id="@+id/spending_amount_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter your current spending amount in dollars:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintBottom_toTopOf="@+id/edit_txt_spending_amount"
+        />
+    <EditText
+        android:id="@+id/edit_txt_spending_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spending_amount_txt"
+        />
+
+    <TextView
+        android:id="@+id/inflat_txt"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#FCB9B9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter the current inflation rate:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_txt_spending_amount"
+        app:layout_constraintBottom_toTopOf="@+id/inflat_edit"
+        />
+    <EditText
+        android:id="@+id/inflat_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inflat_txt"
+        />
+
+    <TextView
+        android:id="@+id/total_txt"
+        android:layout_width="350dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="8dp"
+        android:backgroundTint="#FCB9B9"
+        android:text="Given the rate you have entered you should expect this expense to be:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/inflat_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

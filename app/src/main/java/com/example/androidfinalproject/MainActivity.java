@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Pair;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
@@ -19,12 +20,19 @@ import com.example.androidfinalproject.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     Toolbar toolbar;
+    private InflationCalc inflationCalc;
+    private EditText spending, rate;
+    private Snackbar snackbar;
 
     @Override
     protected void onCreate (Bundle savedInstanceState)
@@ -34,15 +42,55 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar =setupToolbar();
         setupFAB();
-
+        setupfields();
     }
 
+    private void setupfields() {
+        spending = findViewById(R.id.edit_txt_spending_amount);
+        rate = findViewById(R.id.inflat_edit);
+        View layoutMain = findViewById(R.id.main_activity);
+        snackbar = Snackbar.make(layoutMain, "",
+                Snackbar.LENGTH_INDEFINITE);
+    }
+
+    private void handleFABClick() {
+        Pair<String, String> spendingAndRate = new Pair<>(
+                spending.getText().toString(),
+                rate.getText().toString());
+        setFieldsTo(spendingAndRate);
+
+            String msg = getNumber();
+        snackbar.setText(msg);
+        snackbar.show();
+    }
+
+    private void setFieldsTo(Pair<String, String> spendingAndRate) {
+            assert spendingAndRate.first != null;
+            assert spendingAndRate.second != null;
+        double money = Double.parseDouble(spendingAndRate.first);
+        double theRate = Double.parseDouble(spendingAndRate.second);
+
+        if ( inflationCalc== null)
+            inflationCalc = new InflationCalc(money, theRate);
+        else {
+            inflationCalc.setMoney(money);
+            inflationCalc.setRate(theRate);
+        }
+    }
+
+    private String getNumber() {
+        final double calc;
+        calc = inflationCalc.calculate();
+
+        String total = calc+"";
+        return total;
+    }
     private void setupFAB() {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make (toolbar,"Hello, world!", Snackbar.LENGTH_SHORT).show ();
+                handleFABClick();
             }
         });
     }

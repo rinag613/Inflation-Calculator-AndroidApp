@@ -54,21 +54,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleFABClick() {
-        Pair<String, String> spendingAndRate = new Pair<>(
-                spending.getText().toString(),
-                rate.getText().toString());
-        setFieldsTo(spendingAndRate);
+              String spnd=  spending.getText().toString();
+               String rt= rate.getText().toString();
+        setFieldsTo(spnd, rt);
 
             String msg = getNumber();
         snackbar.setText(msg);
         snackbar.show();
     }
 
-    private void setFieldsTo(Pair<String, String> spendingAndRate) {
-            assert spendingAndRate.first != null;
-            assert spendingAndRate.second != null;
-        double money = Double.parseDouble(spendingAndRate.first);
-        double theRate = Double.parseDouble(spendingAndRate.second);
+    private void setFieldsTo(String spnd, String rt) {
+
+        double money = Double.parseDouble(spnd);
+        double theRate = Double.parseDouble(rt);
 
         if ( inflationCalc== null)
             inflationCalc = new InflationCalc(money, theRate);

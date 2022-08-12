@@ -10,6 +10,7 @@ public class InflationCalc {
     public InflationCalc(double mn, double rt) {
         this.money=mn;
         this.rate = rt;
+        rate =(rate/100)+1;
     }
 
     public void setRate(double rt){
@@ -33,8 +34,7 @@ public class InflationCalc {
     }
 
     public double calculate(){
-        double mn=getMoney();
-        total = (getMoney()*getRate())+mn;
+        total = (getMoney()*getRate());
         moneyLost=total-money;
         return total;
     }

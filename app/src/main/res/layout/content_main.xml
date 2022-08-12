@@ -21,16 +21,18 @@
 
 
     <TextView
-        android:backgroundTint="#FCB9B9"
         android:layout_marginTop="25dp"
         android:id="@+id/spending_amount_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:text="Please enter your current spending amount in dollars:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintBottom_toTopOf="@+id/edit_txt_spending_amount"
+        android:background="@color/pink"
         />
     <EditText
         android:id="@+id/edit_txt_spending_amount"
@@ -43,10 +45,13 @@
 
     <TextView
         android:id="@+id/inflat_txt"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:layout_marginTop="25dp"
         android:backgroundTint="#FCB9B9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:background="@color/pink"
         android:text="Please enter the current inflation rate:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,15 +70,19 @@
     <TextView
         android:id="@+id/total_txt"
         android:layout_width="350dp"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="8dp"
         android:backgroundTint="#FCB9B9"
+        android:background="@color/pink"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:text="Given the rate you have entered you should expect this expense to be:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/inflat_edit" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="60dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,11 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="land_mar">25dp</dimen>
+    <dimen name="bot_mar">15dp</dimen>
+    <dimen name="total_mar">8dp</dimen>
+    <dimen name="bot_tot">60dp</dimen>
+    <dimen name="width">350dp</dimen>
+    <dimen name="height">45dp</dimen>
+    <dimen name="left_land">30dp</dimen>
+    <dimen name="left_tot">8dp</dimen>
 </resources>

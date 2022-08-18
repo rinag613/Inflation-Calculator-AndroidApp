@@ -2,9 +2,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.androidfinalproject.MainActivity">
+
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/monthly"
+        android:checkable="true"
+        android:title="@string/monthly"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/yearly"
+        android:checkable="true"
+        android:title="@string/yearly"
+        app:showAsAction="never"
+        />
+<item
+        android:id="@+id/action_about"
+        android:title="@string/about"
+    android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="ifRoom" />
 </menu>

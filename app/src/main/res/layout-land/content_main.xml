@@ -29,18 +29,17 @@
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:text="@string/spend"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="@dimen/left_land"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintBottom_toTopOf="@+id/edit_txt_spending_amount"
         android:background="@color/pink"
         />
     <EditText
         android:id="@+id/edit_txt_spending_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spending_amount_txt"
+        android:layout_marginLeft="@dimen/left_land"
+        app:layout_constraintStart_toEndOf="@id/spending_amount_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/spending_amount_txt"
         />
 
     <TextView
@@ -53,36 +52,35 @@
         android:gravity="center"
         android:background="@color/pink"
         android:text="@string/inflation"
+        android:layout_marginLeft="@dimen/left_land"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_txt_spending_amount"
-        app:layout_constraintBottom_toTopOf="@+id/inflat_edit"
+        app:layout_constraintTop_toBottomOf="@+id/spending_amount_txt"
         />
     <EditText
         android:id="@+id/inflat_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inflat_txt"
+        android:layout_marginLeft="@dimen/left_land"
+        app:layout_constraintStart_toEndOf="@id/inflat_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/inflat_txt"
         />
     <Button
         android:id="@+id/resources_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/resources"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spending_amount_txt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/total_txt"
+        app:layout_constraintTop_toBottomOf="@id/spending_amount_txt"
         android:layout_marginBottom="@dimen/bot_mar"
         />
     <TextView
         android:id="@+id/total_txt"
         android:layout_width="@dimen/width"
         android:layout_height="@dimen/height"
-        android:layout_marginLeft="@dimen/total_mar"
+        android:layout_marginLeft="@dimen/left_tot"
         android:layout_marginTop="@dimen/land_mar"
-        android:layout_marginRight="@dimen/total_mar"
+        android:layout_marginRight="@dimen/left_tot"
         android:backgroundTint="#FCB9B9"
         android:background="@color/pink"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
@@ -90,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inflat_txt"
         android:layout_marginBottom="@dimen/bot_tot"
         />
 

@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">AndroidFinalProject</string>
     <string name="action_settings">Settings</string>
+    <string name="info">For those who want to learn more about how to improve their financial literacy, there are so many resources out there to help you navigate the current challenging times. \n\nThe first step would be to cut back on spending and maintain a balanced budget. A balanced budget means that there is more money coming in than going out, this ensures you spend within your means. By starting to cut back on less important areas, you can adjust for the impact of inflation on important expenses. \n\nThe second thing is to research and gain a better understanding of the market. The financial markets ebb and flow with good times and bad times and although we are in a bad time right now that does not mean all hope is lost. \n\nStaying up to date on important current news and educating yourself on the important information can make all the difference.</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="about">About</string>
+    <string name="about_title">About The Inflation Calulator</string>
+    <string name="about_txt">This app is intended to help users mitigate the catastrophic effects of inflection on daily household budgets. Millions of Americans worldwide are being affected by the rising cost of average household items, and the future is becoming increasingly uncertain.Therefore, we created an app to help people calculate how their future monthly expenses will rise in proportion to the current inflation rate. The way this app works, is the user inputs the current amount of money they are spending per timeframe on a certain item in addition to the current inflation rate and the app will calculate how much money they should expect to spend over the same timeframe moving forward.</string>
+    <string name="resources">Resources</string>
+    <string name="spend">Please enter your current spending amount in dollars for this month:</string>
+    <string name="inflation">Please enter the current inflation rate:</string>
+    <string name="total">Given the rate you have entered you should expect this expense to be:</string>
+    <string name="inflation_calculation">Inflation Calculation</string>
 </resources>
